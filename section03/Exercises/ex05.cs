@@ -3,11 +3,11 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 
-namespace cursoCSharp.section03
+namespace section03.Exercises
 {
-    class ex002
+    class ex05
     {
-        static void Main(string[] args)
+        internal static void Execute()
         {
             NumberFormatInfo provider = new NumberFormatInfo();
             provider.NumberDecimalSeparator = ".";
@@ -20,8 +20,8 @@ namespace cursoCSharp.section03
             string[] listaPrecos = precos.Split(',');
 
 
-            // Atendimento
-            atendimento:
+        // Atendimento
+        atendimento:
 
             Console.Write("Digite o código do seu lanche: ");
             int codigo = int.Parse(Console.ReadLine());
@@ -45,10 +45,10 @@ namespace cursoCSharp.section03
             string op = Console.ReadLine().Trim().ToUpper();
 
             if (op.Contains('Y')) goto atendimento;
-            else 
+            else
                 Console.WriteLine("Obrigado pela preferência!");
-                Thread.Sleep(2000); 
-                return;
+            Thread.Sleep(2000);
+            return;
         }
     }
 }
