@@ -14,17 +14,9 @@ namespace section03.Exercises
             double salario = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             if (salario > 0.00 && salario < 2000.00) Console.WriteLine("Isento");
-            else if (salario > 2000.01 && salario < 3000.00)
-            {
-                int IR = 8;
-                Console.WriteLine(CalcularDesconto(salario, IR));
-
-            }
-
-
-
-
-
+            else if (salario > 2000.01 && salario <= 3000.00) Console.WriteLine(CalcularDesconto(salario, 8));
+            else if (salario > 3000.01 && salario <= 4500.00) Console.WriteLine(CalcularDesconto(salario, 18));
+            else if (salario > 4500.00) Console.WriteLine(CalcularDesconto(salario, 28));
         }
         private static double CalcularDesconto(double s, int IR)
         {
