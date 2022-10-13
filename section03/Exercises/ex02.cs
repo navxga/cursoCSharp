@@ -11,7 +11,10 @@ namespace section03.Exercises
     {
         internal static void Execute()
         {
-            Console.WriteLine("Hello, World!");
+            Console.Write("Digite um número: ");
+            int n1 = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(n1 % 2 == 0 ? "PAR" : "ÍMPAR");
         }
     }
 }

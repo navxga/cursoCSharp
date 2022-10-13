@@ -11,20 +11,21 @@ namespace section03
     {
         static void Main(string[] args)
         {
-            if (args.Contains("1"))
-                ex01.Execute();
+            if (args.Contains("1")) ex01.Execute();
 
-            if (args.Contains("2"))
-                ex02.Execute();
+            if (args.Contains("2")) ex02.Execute();
 
-            if (args.Contains("3"))
-                ex03.Execute();
+            if (args.Contains("3")) ex03.Execute();
 
-            if (args.Contains("4"))
-                ex04.Execute();
+            if (args.Contains("4")) ex04.Execute();
 
-            if (args.Contains("5"))
-                ex05.Execute();
+            if (args.Contains("5")) ex05.Execute();
+
+            if (args.Contains("6")) ex06.Execute();
+
+            if (args.Contains("7")) ex07.Execute();
+
+            if (args.Contains("8")) ex08.Execute();
         }
     }
 }

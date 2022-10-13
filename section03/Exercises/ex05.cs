@@ -31,7 +31,7 @@ namespace section03.Exercises
 
 
             // Calculo do valor final à pagar
-            double valorFinal = Convert.ToDouble(listaPrecos[codigo], provider) * qtd;
+            double valorFinal = double.Parse(listaPrecos[codigo], provider) * qtd;
 
             // Conta preparada para pagamento
             if (qtd == 1)

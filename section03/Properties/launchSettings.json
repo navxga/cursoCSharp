@@ -2,7 +2,7 @@
   "profiles": {
     "section03": {
       "commandName": "Project",
-      "commandLineArgs": "1"
+      "commandLineArgs": "8"
     }
   }
 }
