@@ -10,7 +10,16 @@ namespace section03.Exercises04
     {
         internal static void Execute()
         {
-            Console.WriteLine();
+            Console.Write("Digite o número: ");
+            int num = int.Parse(Console.ReadLine());
+
+            int fatorial = 1;
+            for (int i = 1; i <= num; i++)
+            {
+                fatorial *= i;
+            }
+
+            Console.WriteLine(fatorial);
         }
     }
 }

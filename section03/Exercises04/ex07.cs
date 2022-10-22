@@ -10,7 +10,13 @@ namespace section03.Exercises04
     {
         internal static void Execute()
         {
-            Console.WriteLine();
+            Console.Write("Digite o número de linhas: ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"{i} {i*i} {i*i*i}");
+            }
         }
     }
 }
