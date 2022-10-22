@@ -15,6 +15,8 @@ namespace section04
                 if (args[1] == "1") Exercises01.ex01.Execute();
 
                 if (args[1] == "2") Exercises01.ex02.Execute();
+
+                if (args[1] == "3") Exercises01.ex03.Execute();
             }
         }
     }
