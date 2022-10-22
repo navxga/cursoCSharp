@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Globalization;
 using System.Threading;
 
-namespace section03.Exercises
+namespace section03.Exercises02
 {
     class ex05
     {

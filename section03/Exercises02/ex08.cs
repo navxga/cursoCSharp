@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
 
-namespace section03.Exercises
+namespace section03.Exercises02
 {
     internal class ex08
     {

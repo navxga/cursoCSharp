@@ -1,4 +1,5 @@
-﻿using section03.Exercises;
+﻿using section03.Exercises02;
+using section03.Exercises03;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,21 +12,34 @@ namespace section03
     {
         static void Main(string[] args)
         {
-            if (args.Contains("1")) ex01.Execute();
+            if (args[0] == "2")
+            {
+                if (args[1] == "1") Exercises02.ex01.Execute();
 
-            if (args.Contains("2")) ex02.Execute();
+                if (args[1] == "2") Exercises02.ex02.Execute();
 
-            if (args.Contains("3")) ex03.Execute();
+                if (args[1] == "3") Exercises02.ex03.Execute();
 
-            if (args.Contains("4")) ex04.Execute();
+                if (args[1] == "4") Exercises02.ex04.Execute();
 
-            if (args.Contains("5")) ex05.Execute();
+                if (args[1] == "5") Exercises02.ex05.Execute();
 
-            if (args.Contains("6")) ex06.Execute();
+                if (args[1] == "6") Exercises02.ex06.Execute();
 
-            if (args.Contains("7")) ex07.Execute();
+                if (args[1] == "7") Exercises02.ex07.Execute();
 
-            if (args.Contains("8")) ex08.Execute();
+                if (args[1] == "8") Exercises02.ex08.Execute();
+            }
+
+            if (args[0] == "3")
+            {
+                if (args[1] == "1") Exercises03.ex01.Execute();
+
+                if (args[1] == "2") Exercises03.ex02.Execute();
+
+                if (args[1] == "3") Exercises03.ex03.Execute();
+            }
+
         }
     }
 }

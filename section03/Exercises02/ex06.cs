@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace section03.Exercises
+namespace section03.Exercises02
 {
     internal class ex06
     {
