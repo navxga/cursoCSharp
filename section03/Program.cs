@@ -40,6 +40,22 @@ namespace section03
                 if (args[1] == "3") Exercises03.ex03.Execute();
             }
 
+            if (args[0] == "4")
+            {
+                if (args[1] == "1") Exercises04.ex01.Execute();
+
+                if (args[1] == "2") Exercises04.ex02.Execute();
+
+                if (args[1] == "3") Exercises04.ex03.Execute();
+
+                if (args[1] == "4") Exercises04.ex04.Execute();
+
+                if (args[1] == "5") Exercises04.ex05.Execute();
+
+                if (args[1] == "6") Exercises04.ex06.Execute();
+
+                if (args[1] == "7") Exercises04.ex07.Execute();
+            }
         }
     }
 }
