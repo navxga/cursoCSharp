@@ -8,9 +8,9 @@ using System.Globalization;
 
 namespace section04.Exercises01
 {
-    internal class ex02
+    class ex02
     {
-        internal static void Execute()
+        public static void Execute()
         {
             Funcionario f1 = new Funcionario();
             Funcionario f2 = new Funcionario();
@@ -36,7 +36,7 @@ namespace section04.Exercises01
             Console.WriteLine($"Salário médio: {salarioMedio.ToString("F2", CultureInfo.InvariantCulture)}");
         }
     }
-    internal class Funcionario
+    class Funcionario
     {
         public string Nome;
         public double Salario;

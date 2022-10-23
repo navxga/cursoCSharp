@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace section04.Exercises01
 {
-    internal class ex01
+    class ex01
     {
-        internal static void Execute()
+        public static void Execute()
         {
             Pessoa p1 = new Pessoa();
             Pessoa p2 = new Pessoa();
@@ -35,7 +35,7 @@ namespace section04.Exercises01
             else Console.WriteLine($"Pessoa mais velha {p2.Nome}");
         }
     }
-    internal class Pessoa
+    class Pessoa
     {
         public string Nome;
         public int Idade;

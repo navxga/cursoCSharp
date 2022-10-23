@@ -9,7 +9,7 @@ namespace section04.Exercises01
 {
     class ex03
     {
-        internal static void Execute()
+        public static void Execute()
         {
             Triangulo x = new Triangulo();
             Triangulo y = new Triangulo();
