@@ -10,6 +10,8 @@ namespace section04
     {
         static void Main(string[] args)
         {
+            if (args[2].Contains("Câmbio")) Exercises01.CasadeCambio.Home.Execute();
+
             if (args[0] == "1")
             {
                 if (args[1] == "1") Exercises01.ex01.Execute();

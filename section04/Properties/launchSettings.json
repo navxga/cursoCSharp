@@ -2,7 +2,7 @@
   "profiles": {
     "section04": {
       "commandName": "Project",
-      "commandLineArgs": "1 5"
+      "commandLineArgs": "1 5 Câmbio"
     }
   }
 }
