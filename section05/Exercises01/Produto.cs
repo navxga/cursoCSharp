@@ -9,22 +9,17 @@ namespace section05.Exercises01
 {
     class Produto
     {
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        private string _nome;
+        public double Preco { get; private set; }
+        public int Quantidade { get; private set; }
 
         public Produto() { 
         }
         public Produto(string nome, double preco, int quantidade)
         {
-            Nome = nome;
+            _nome = nome;
             Preco = preco;
             Quantidade = quantidade;
-        }
-        public Produto(string nome, double preco)
-        {
-            Nome = nome;
-            Preco = preco;
         }
 
         public double ValorTotalEmEstoque()
@@ -39,9 +34,10 @@ namespace section05.Exercises01
         {
             Quantidade -= quantidade;
         }
+        
         public override string ToString()
         {
-            return $"{Nome}, " +
+            return $"{_nome}, " +
             $"R${Preco.ToString("F2", CultureInfo.InvariantCulture)}, " +
             $"{Quantidade} unidades, " +
             $"Total: R${ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture)}";

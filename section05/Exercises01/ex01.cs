@@ -1,46 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace section05.Exercises01
 {
-    class ex01
+    public class ex01
     {
         public static void Execute()
         {
-            Console.WriteLine("Entre os dados do produto:");
-            Console.Write("Nome: ");
-            string nome = Console.ReadLine();
+            Console.Write("Entre o número da conta: ");
+            int numero = int.Parse(Console.ReadLine());
 
-            Console.Write("Preço: ");
-            double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            Console.Write("Entre o número da conta: ");
+            string titular = Console.ReadLine();
 
-            Produto p = new Produto(nome, preco);
+            Console.Write("Haverá depósito inicial [s/n] ?");
+            char depositoInicial = char.Parse(Console.ReadLine().ToLower());
 
-            Produto p2 = new Produto();
+            if (depositoInicial == 's')
+            {
+                Console.Write("Entre o valor do depósito inicial: ");
+                double deposito = double.Parse(Console.ReadLine());
 
-            Console.WriteLine("Dados do produto: " + p);
-            Console.WriteLine();
+                Conta c = new Conta(numero, titular, deposito);
+            }
+            else
+            {
+                Conta c = new Conta(numero, titular);
+            }
 
-            Console.Write("Digite o número de produtos a ser adicionado ao estoque: ");
-            int qtd = int.Parse(Console.ReadLine());
+            
 
-            p.AdicionarProdutos(qtd);
-
-            Console.WriteLine();
-            Console.WriteLine("Dados atualizados: " + p);
-            Console.WriteLine();
-
-            Console.Write("Digite o número de produtos a ser removido do estoque: ");
-            qtd = int.Parse(Console.ReadLine());
-
-            p.RemoverProdutos(qtd);
-
-            Console.WriteLine();
-            Console.WriteLine("Dados atualizados: " + p);
+            Console.WriteLine("Dados da Conta" + c);
         }
     }
 }
