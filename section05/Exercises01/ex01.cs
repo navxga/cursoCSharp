@@ -33,7 +33,7 @@ namespace section05.Exercises01
 
             
 
-            Console.WriteLine("Dados da Conta" + c);
+            Console.WriteLine("Dados da Conta");
         }
     }
 }
