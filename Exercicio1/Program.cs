@@ -1,72 +1,66 @@
 ﻿using Exercicio1.Entities;
 using Exercicio1.Entities.Enums;
 using System;
+using System.Globalization;
 
-namespace Section09.OrderSystem
+namespace Section09.Exercicio1
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.Write("Enter department's name: ");
-
-            Department department = new Department()
-            {
-                Name = Console.ReadLine()
-            };
+            string deptName = Console.ReadLine();
 
             //Dados do trabalhador
             Console.WriteLine("Enter worker data:");
 
-            Worker worker = new Worker();
-
             Console.Write("Name: ");
-            worker.Name = Console.ReadLine();
+            string name = Console.ReadLine();
 
             Console.Write("Level (Junior / MidLevel / Senior): ");
-            worker.Level = Enum.Parse<WorkerLevel>(Console.ReadLine());
+            WorkerLevel level = Enum.Parse<WorkerLevel>(Console.ReadLine());
 
             Console.Write("BaseSalary: ");
-            worker.baseSalary = double.Parse(Console.ReadLine());
+            double baseSalary = double.Parse(Console.ReadLine());
+
+            //Instanciando objetos
+            Department department = new Department(deptName);
+            Worker worker = new Worker(name, level, baseSalary, department);
 
             //Contratos
             Console.Write("How many contracts to this worker?: ");
-            int c = int.Parse(Console.ReadLine());
+            int n = int.Parse(Console.ReadLine());
 
-            List<HourContract> listHourContract = new List<HourContract>();
-            for (int i = 0; i < c; i++)
+            for (int i = 0; i < n; i++)
             {
-                HourContract hourContract = new HourContract(); 
                 //Data
                 Console.WriteLine($"Enter #{i} contract data:");
                 Console.Write("Date (DD/MM/YYYY): ");
-                hourContract.Date = DateTime.Parse(Console.ReadLine());
+                DateTime data = DateTime.Parse(Console.ReadLine());
 
                 //Valor por hora
                 Console.Write("Value per hour: ");
-                hourContract.ValuePerHour = double.Parse(Console.ReadLine());
+                double valuePerHour = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
                 //Duração
                 Console.Write("Duration (hours): ");
-                hourContract.Hours = int.Parse(Console.ReadLine());
+                int hours = int.Parse(Console.ReadLine());
 
-                listHourContract.Add(hourContract);
+                HourContract hourContract = new HourContract(data, valuePerHour, hours); 
+                worker.AddContract(hourContract);
             }
 
             Console.Write("Enter month and year to calculate income (MM/YYYY): ");
-            string periodo = Console.ReadLine();
+            string monthAndYear = Console.ReadLine();
 
-            double salary = 0;
-            foreach (var l in listHourContract)
-            {
-                if (l.Date.ToString("MM/yyyy") == periodo)   
-                    salary += l.TotalValue();
-            }
+            int month = int.Parse(monthAndYear.Substring(0, 2));
+            int year = int.Parse(monthAndYear.Substring(3));
 
             //Execução
             Console.WriteLine($"Name: {worker.Name}");
-            Console.WriteLine($"Department: {department.Name}");
-            Console.WriteLine($"Income for {periodo}: {salary + worker.baseSalary}");
+            Console.WriteLine($"Department: {worker.Department.Name}");
+            Console.WriteLine($"Income for {monthAndYear}: {worker.Income(month, year).ToString("F2", CultureInfo.InvariantCulture)}");
         }
     }
 }
